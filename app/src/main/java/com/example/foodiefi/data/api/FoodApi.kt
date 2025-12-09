@@ -9,9 +9,7 @@ interface FoodApi {
     //temel url appmodulde burda sadece endpointleri yazıcaz
 
     @GET("filter.php")
-    suspend fun getMeals(
-        @Query("c") category: String = "Seafood" //varsayılan
-    ) : MealResponse
+    suspend fun getMeals(@Query("c") category: String) : MealResponse
 
     @GET("categories.php")
     suspend fun getCategories() : CategoryResponse

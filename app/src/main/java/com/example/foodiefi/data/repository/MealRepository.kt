@@ -8,8 +8,8 @@ import javax.inject.Inject
 //veriyi apiden alıp suncaz
 
 class MealRepository @Inject constructor(private val api : FoodApi) {
-    suspend fun getMeals() : List<Meal>{
-        return api.getMeals().meals
+    suspend fun getMeals(category:String) : List<Meal>{
+        return api.getMeals(category).meals
     }
 
     suspend fun getCategories() : List<Category>{
