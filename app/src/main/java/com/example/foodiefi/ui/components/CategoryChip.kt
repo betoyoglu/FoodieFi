@@ -10,8 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.foodiefi.R
 
 @Composable
 fun CategoryFilterChip(
@@ -23,9 +26,11 @@ fun CategoryFilterChip(
         FilterChip(
             selected = isSelected,
             onClick = onClick,
-            label = { Text(text) },
+            label = { Text(
+                            text,
+                            fontFamily = FontFamily(Font(R.font.googlesans_regular)),) },
             colors = FilterChipDefaults.filterChipColors(
-                selectedContainerColor = Color(0xFF2D6A4F),
+                selectedContainerColor = Color(0xFF1E5128),
                 selectedLabelColor = Color.White,
                 containerColor = Color.White,
                 labelColor = Color.Black
@@ -36,7 +41,7 @@ fun CategoryFilterChip(
                     model = chipImage,
                     contentDescription = "",
                     modifier = Modifier
-                        .size(FilterChipDefaults.IconSize)
+                        .size(24.dp)
                         .clip(CircleShape)
                 )
             }

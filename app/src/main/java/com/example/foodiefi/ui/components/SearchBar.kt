@@ -8,10 +8,14 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.SearchBar
+import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import com.example.foodiefi.R
 
@@ -32,7 +36,12 @@ fun SearchBarM3(
         onSearch = onSearch,
         active = active,
         onActiveChange = onActiveChange,
-        placeholder = { Text(text = "Search any recipe...") },
+        placeholder = { Text(text = "Search any recipe...",
+            fontFamily = FontFamily(Font(R.font.googlesans_regular))) },
+        colors = SearchBarDefaults.colors(
+                containerColor = Color(0xFFFAF9F6),
+            ),
+        shape = SearchBarDefaults.inputFieldShape,
         leadingIcon = {
             Icon(imageVector = Icons.Default.Search, contentDescription = "search")
         },

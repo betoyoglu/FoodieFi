@@ -22,5 +22,4 @@ interface MealDao {
     @Query("select exists(select 1 from favorites_table where mealId = :mealId)")
     fun isFavorite(mealId: String): Flow<Boolean>
 
-
 }

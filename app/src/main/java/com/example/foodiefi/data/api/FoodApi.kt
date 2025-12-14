@@ -13,4 +13,7 @@ interface FoodApi {
 
     @GET("categories.php")
     suspend fun getCategories() : CategoryResponse
+
+    @GET("lookup.php")
+    suspend fun getMealById(@Query("i") id: String): MealResponse
 }

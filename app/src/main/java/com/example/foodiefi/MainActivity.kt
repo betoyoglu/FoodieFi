@@ -14,6 +14,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.foodiefi.navigation.ScreenNav
 import com.example.foodiefi.ui.components.CategoryFilterChip
 import com.example.foodiefi.ui.home.HomeScreen
 import com.example.foodiefi.ui.theme.FoodieFiTheme
@@ -27,18 +28,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FoodieFiTheme {
-                Scaffold (
-                    topBar = {
-                        TopAppBar(
-                            title = { Text(text = "FoodieFi") }
-                        )
-                    }
-                ){
-                    innerPadding ->
-                    Column (modifier = Modifier.padding(innerPadding).fillMaxSize()) {
-                        HomeScreen()
-                    }
-                }
+                ScreenNav()
             }
         }
     }
