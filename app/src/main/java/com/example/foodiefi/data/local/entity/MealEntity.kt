@@ -8,5 +8,6 @@ data class MealEntity (
     @PrimaryKey
     val mealId: String,
     val mealName: String,
-    val mealImageUrl: String
+    val mealImageUrl: String,
+    val mealCategory: String
 )

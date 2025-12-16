@@ -30,7 +30,8 @@ class MealRepository @Inject constructor(
         val entity = MealEntity(
             mealId = meal.mealId,
             mealName = meal.mealName,
-            mealImageUrl = meal.imageUrl
+            mealImageUrl = meal.imageUrl,
+            mealCategory = meal.mealCategory
         )
         mealDao.insertFavorite(entity)
     }
@@ -39,7 +40,8 @@ class MealRepository @Inject constructor(
         val entity = MealEntity(
             mealId = meal.mealId,
             mealName = meal.mealName,
-            mealImageUrl = meal.imageUrl
+            mealImageUrl = meal.imageUrl,
+            mealCategory = meal.mealCategory
         )
         mealDao.deleteFavorite(entity)
     }
@@ -47,4 +49,23 @@ class MealRepository @Inject constructor(
     fun isMealFavorite(mealId: String): Flow<Boolean>{
         return mealDao.isFavorite(mealId)
     }
+
+    fun getAllFavorites() : Flow<List<MealEntity>>{
+        return mealDao.getAllFavorites()
+    }
+}
+
+// MealEntity'yi Meal sınıfına çeviren yardımcı fonksiyon
+fun MealEntity.toDomainModel(): Meal {
+    return Meal(
+        mealId = this.mealId,
+        mealName = this.mealName,
+        imageUrl = this.mealImageUrl,
+        mealCategory = this.mealCategory,
+        mealArea = "",
+        mealInstructions = "",
+        mealYoutubeLink = "",
+        strIngredient1 = null, strIngredient2 = null, strIngredient3 = null, strIngredient4 = null, strIngredient5 = null,
+        strMeasure1 = null, strMeasure2 = null, strMeasure3 = null, strMeasure4 = null, strMeasure5 = null
+    )
 }

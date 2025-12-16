@@ -33,7 +33,9 @@ object AppModule {
             app,
             FoodDatabase::class.java,
             "foodiefi_db"
-        ).build()
+        )
+        .fallbackToDestructiveMigration()
+        .build()
     }
 
     @Provides

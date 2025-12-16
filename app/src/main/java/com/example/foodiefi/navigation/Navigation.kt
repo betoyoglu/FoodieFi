@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.foodiefi.ui.components.FoodieFiBottomBar
 import com.example.foodiefi.ui.detail.DetailScreen
-import com.example.foodiefi.ui.favorite.Favoritecreen
+import com.example.foodiefi.ui.favorite.FavoriteScreen
 import com.example.foodiefi.ui.home.HomeScreen
 
 @Composable
@@ -54,7 +54,7 @@ fun ScreenNav(){
                 DetailScreen(navController = navController)
             }
             composable(BottomNavItem.Favorite.route){
-                Favoritecreen()
+                FavoriteScreen(navController = navController)
             }
         }
     }
