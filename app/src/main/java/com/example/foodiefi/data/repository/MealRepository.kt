@@ -53,6 +53,16 @@ class MealRepository @Inject constructor(
     fun getAllFavorites() : Flow<List<MealEntity>>{
         return mealDao.getAllFavorites()
     }
+
+    suspend fun searchMeals(query: String): List<Meal>{
+        return try {
+            val response = api.searchMeals(query)
+            response.meals ?: emptyList()
+        }catch (e: Exception){
+            e.printStackTrace()
+            emptyList()
+        }
+    }
 }
 
 // MealEntity'yi Meal sınıfına çeviren yardımcı fonksiyon

@@ -16,6 +16,7 @@ import com.example.foodiefi.ui.components.FoodieFiBottomBar
 import com.example.foodiefi.ui.detail.DetailScreen
 import com.example.foodiefi.ui.favorite.FavoriteScreen
 import com.example.foodiefi.ui.home.HomeScreen
+import com.example.foodiefi.ui.home.ListScreen
 
 @Composable
 fun ScreenNav(){
@@ -55,6 +56,18 @@ fun ScreenNav(){
             }
             composable(BottomNavItem.Favorite.route){
                 FavoriteScreen(navController = navController)
+            }
+
+            composable(
+                route= "listScreen/{listType}",
+                arguments = listOf(navArgument("listType"){type = NavType.StringType})
+            ){backStackEntry ->
+                val type = backStackEntry.arguments?.getString("listType") ?: "meals"
+
+                ListScreen(
+                    navController= navController,
+                    listType = type
+                )
             }
         }
     }
