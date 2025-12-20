@@ -78,9 +78,9 @@ com.example.foodiefi
 
 ## 🧪 Testing
 
-Uygulama kalitesini ve sürdürülebilirliği sağlamak adına kapsamlı testler yazılmıştır.
+Ensuring code quality with comprehensive testing layers:
 
-| Test Türü | Kapsam | Kullanılan Araçlar |
+| Test Type | Scope | Tools Used |
 |-----------|--------|-------------------|
 | **Unit Tests** | ViewModels, Repositories | JUnit4, Mockk, Coroutines-Test |
 | **Integration Tests** | Room Database (DAO) | AndroidX Test, Room-Testing |
