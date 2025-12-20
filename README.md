@@ -49,7 +49,7 @@ com.example.foodiefi
 │   ├── MealUIState.kt       # State holder for UI
 │   ├── FoodieFiApp.kt       # Root Composable (Scaffold entry point)
 │   └── MainActivity.kt      # Application entry point
-
+```
 ### 🏗️ Architecture & Design Pattern
 * **MVVM (Model-View-ViewModel):** Separation of concerns between UI and business logic.
 * **Clean Architecture:** Distinct layers for Data, Domain, and UI.
